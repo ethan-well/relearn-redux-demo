@@ -2,8 +2,8 @@
 used to learn react
 # run in you local
 ```
-git clone 
-cd 
+https://github.com/wewin11235/react-demo.git
+cd react-demo
 npm install
 webpack --mode=development
 ```
