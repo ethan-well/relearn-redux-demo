@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].[hash:8].js',
-    publicPath: './',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -19,8 +19,16 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({
-    filename: 'index.html',
-    template: 'src/index.html'
-  })]
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'src/index.html'
+    }),
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, 'build'),
+    inline: true,
+    port: 9000,
+    open: true
+  }
 };

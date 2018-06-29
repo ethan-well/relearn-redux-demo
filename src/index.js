@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export default class HelloWorld extends React.Component{
+export default class HelloReact extends React.Component{
   constructor(props) {
     super(props);
   }
 
   render(){
-    return( <div>Hello world</div>);
+    return( <div>Hello React</div>);
   }
 }
 
-ReactDOM.render(<HelloWorld />, document.getElementById('root'));
+ReactDOM.render(<HelloReact />, document.getElementById('root'));
