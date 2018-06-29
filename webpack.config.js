@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -8,6 +9,7 @@ module.exports = {
     filename: '[name].[hash:8].js',
     publicPath: '/',
   },
+  mode: 'development',
   module: {
     rules: [
       {
@@ -24,11 +26,13 @@ module.exports = {
       filename: 'index.html',
       template: 'src/index.html'
     }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
     contentBase: path.join(__dirname, 'build'),
-    inline: true,
     port: 9000,
-    open: true
+    open: true,
+    hot: true
   }
 };
