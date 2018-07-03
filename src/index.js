@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloReact from './HelloReact.js';
+import {Provider} from 'react-redux';
+import TodoApp from './TodoApp.js';
+import store from './Store.js';
 
-ReactDOM.render(<HelloReact />, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <TodoApp />
+  </Provider>,
+  document.getElementById('root')
+)
 
 if (module.hot) {
   module.hot.accept('./print.js', function(){
