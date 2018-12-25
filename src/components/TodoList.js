@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-const TodoList = (todos) => (
+const TodoList = ({todos}) => (
   <ul>
     {todos.map(todo => (
       <li key={todo.id}>{todo.text}</li>
@@ -16,7 +16,7 @@ TodoList.propTypes = {
       completed: PropTypes.bool.isRequired,
       text: PropTypes.string.isRequired,
     }).isRequired
-  ).isRequired,
+  ).isRequired
 }
 
 export default TodoList;

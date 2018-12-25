@@ -1,3 +1,12 @@
-import TodoList from './TodoList.js';
+import React from 'react';
+import AddTodo from '../containers/AddTodo';
+import VisibleTodoList from '../containers/VisibleTodoList';
 
-export default TodoList;
+const App = () => (
+  <div>
+    <AddTodo />
+    <VisibleTodoList />
+  </div>
+)
+
+export default App;
