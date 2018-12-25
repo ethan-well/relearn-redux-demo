@@ -1,4 +1,4 @@
-import { ADD_TODO } from '../actions/actionType.js';
+import { ADD_TODO, TOGGLE_TODO } from '../actions/actionType';
 const todos = (state = [], action) => {
   switch (action.type) {
     case ADD_TODO:
@@ -10,6 +10,10 @@ const todos = (state = [], action) => {
           completed: false
         }
       ]
+    case TOGGLE_TODO:
+      return state.map(
+        todo => todo.id == action.id ? { ...todo, completed: !todo.completed} : todo
+      )
     default:
       return state
   }
